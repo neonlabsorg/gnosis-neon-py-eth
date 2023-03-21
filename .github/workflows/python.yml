@@ -28,6 +28,8 @@ jobs:
         with:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: updaet pip
+        run: pip3 install --upgrade pip
       - name: Install dependencies
         run: pip install -U pre-commit
       - name: Run pre-commit
